@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Groceries E-Commerce</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9; /* Light green background */
+        }
+        header {
+            background-color: #4CAF50; /* Dark green header */
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #4CAF50; /* Medium green */
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #a5d6a7; /* Light green footer */
+        }
+        .clear {
+            clear: both;
+        }
+        .quick-links {
+            background-color: #d7ffd9; /* Light green for quick links */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .quick-links a {
+            margin: 0 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+        #registrationForm {
+            display: none; /* Initially hide the registration form */
+            margin-top: 20px; /* Add space above the form */
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #feedback {
+            margin-top: 15px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to Organic Groceries!</h1>
+    <h2>Eat Fresh, Live Healthy</h2>
+</header>
+<div class="container">
+    <img src="https://pfst.cf2.poecdn.net/base/image/3abdccf2454124faa24a971514d7c0a9db910384005dc016c4a8f1465fdb13aa?w=1024&h=768&pmaid=273592533" alt="Organic Groceries Banner">
+    <h2>Organic Fruits</h2>
+    <img src="https://pfst.cf2.poecdn.net/base/image/9946f64126921e59a76f0c014bc452d53ff9b33a1dabfd713c807d3fdfd5b064?w=1024&h=768&pmaid=273607896" alt="Organic Fruits">
+    <p>Discover a variety of organic fruits, including apples, bananas, oranges, and berries, all beautifully arranged in a basket.</p>
+    <h2>Organic Grains</h2>
+    <img src="https://pfst.cf2.poecdn.net/base/image/2db024472e9849bc5b99a43681af687a58c5b85ace2d61ce5dcdd7ad7145739a?w=1024&h=768&pmaid=273608120" alt="Organic Grains">
+    <p>Explore different organic grains such as rice, quinoa, barley, and oats, displayed in an informative diagram.</p>
+    <h2>Organic Vegetables</h2>
+    <img src="https://pfst.cf2.poecdn.net/base/image/b54cdc3da6b8b993a074a4839f15ce6b9b948fa67e4bd2780a367c38336e65f9?w=1024&h=768&pmaid=273608380" alt="Organic Vegetables">
+    <p>Check out a vibrant arrangement of organic vegetables, including carrots, broccoli, and bell peppers, perfect for any healthy meal.</p>
+</div>
+<div class="clear"></div>
+<hr>
+<h2>Featured Products</h2>
+<p>Our products are sourced from certified organic farms.</p>
+<h3>Popular Categories:</h3>
+<ul>
+    <li>Fruits</li>
+    <li>Vegetables</li>
+    <li>Grains</li>
+</ul>
+<ol>
+    <li>Organic Apples</li>
+    <li>Organic Spinach</li>
+    <li>Organic Quinoa</li>
+</ol>
+<dl>
+    <dt>Organic Fruits</dt>
+    <dd>Fresh, juicy, and full of vitamins.</dd>
+    <dt>Organic Vegetables</dt>
+    <dd>Rich in nutrients and fiber.</dd>
+    <dt>Organic Grains</dt>
+    <dd>Healthy sources of energy.</dd>
+</dl>
+<hr>
+<h2>Learn More</h2>
+<p>Explore our <a href="#">about us</a> page to find out more about our mission.</p>
+<p>Check our <a href="#">contact</a> section for inquiries.</p>
+<p><a href="https://www.example.com" target="_blank">Visit our online store!</a></p>
+
+<!-- Quick Links Section -->
+<div class="quick-links">
+    <h3>Quick Links</h3>
+    <a href="#">Visit Our Website</a>
+    <a href="#">Contact Us</a>
+    <a href="#">About Us</a>
+    <a href="#" id="registerLink">Register</a>
+</div>
+
+<!-- Registration Form Section -->
+<div class="form-container" id="registrationForm">
+    <h2>Registration Form</h2>
+    <form id="userRegistrationForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="regNumber">Registration Number:</label>
+        <input type="text" id="regNumber" placeholder="BCS-00-0000-0000" required>
+
+        <label for="gender">Sex:</label>
+        <select id="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="region">Region:</label>
+        <select id="region" required>
+            <option value="">Select Region</option>
+            <option value="dar-es-salaam">Dar es Salaam</option>
+            <option value="arusha">Arusha</option>
+            <option value="mwanza">Mwanza</option>
+            <option value="kilimanjaro">Kilimanjaro</option>
+            <option value="dodoma">Dodoma</option>
+            <option value="mbeya">Mbeya</option>
+            <option value="tanga">Tanga</option>
+            <option value="shinyanga">Shinyanga</option>
+            <option value="kagera">Kagera</option>
+            <option value="singida">Singida</option>
+            <option value="tabora">Tabora</option>
+            <option value="katavi">Katavi</option>
+            <option value="mara">Mara</option>
+            <option value="lindi">Lindi</option>
+            <option value="mtwara">Mtwara</option>
+            <option value="rukwa">Rukwa</option>
+            <option value="pemba">Pemba</option>
+            <option value="zanzibar">Zanzibar</option>
+        </select>
+
+        <label for="district">District:</label>
+        <select id="district" required>
+            <option value="">Select District</option>
+        </select>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" required>
+
+        <button type="submit">Register</button>
+    </form>
+    <div id="feedback"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Show registration form when "Register" link is clicked
+        $('#registerLink').on('click', function(e) {
+            e.preventDefault();
+            $('#registrationForm').toggle(); // Show or hide the registration form
+        });
+
+        const districts = {
+            "dar-es-salaam": ["Ilala", "Kinondoni", "Temeke"],
+            "arusha": ["Arusha City", "Arusha Rural", "Longido"],
+            "mwanza": ["Mwanza City", "Ilemela", "Sengerema"],
+            "kilimanjaro": ["Moshi Urban", "Moshi Rural", "Hai"],
+            "dodoma": ["Dodoma Urban", "Dodoma Rural", "Bahi"],
+            "mbeya": ["Mbeya City", "Chunya", "Rungwe"],
+            "tanga": ["Tanga City", "Muheza", "Pangani"],
+            "shinyanga": ["Shinyanga City", "Kahama", "Shinyanga Rural"],
+            "kagera": ["Bukoba Urban", "Biharamulo", "Karagwe"],
+            "singida": ["Singida Urban", "Makiungu", "Ikungi"],
+            "tabora": ["Tabora Urban", "Nzega", "Urambo"],
+            "katavi": ["Mpanda", "Kigoma"],
+            "mara": ["Musoma Urban", "Tarime", "Bunda"],
+            "lindi": ["Lindi Urban", "Kilwa", "Lindi Rural"],
+            "mtwara": ["Mtwara Urban", "Masasi", "Nanyumbu"],
+            "rukwa": ["Sumbawanga Urban", "Rukwa", "Nkasi"],
+            "pemba": ["Pemba North", "Pemba South"],
+            "zanzibar": ["Zanzibar Urban-West", "Zanzibar North"],
+        };
+
+        $('#region').change(function() {
+            const selectedRegion = $(this).val();
+            const districtSelect = $('#district');
+            districtSelect.empty().append('<option value="">Select District</option>');
+
+            if (selectedRegion) {
+                const regionDistricts = districts[selectedRegion];
+                regionDistricts.forEach(function(district) {
+                    districtSelect.append(`<option value="${district.toLowerCase().replace(/\s+/g, '-')}" >${district}</option>`);
+                });
+            }
+        });
+
+        $('#userRegistrationForm').on('submit', function(event) {
+            event.preventDefault();
+            const fullName = $('#fullName').val();
+            const regNumber = $('#regNumber').val();
+            const email = $('#email').val();
+            const password = $('#password').val();
+            const confirmPassword = $('#confirmPassword').val();
+            const selectedRegion = $('#region').val();
+            const selectedDistrict = $('#district').val();
+            const feedback = $('#feedback');
+
+            feedback.text('');
+
+            if (!/^[A-Za-z ]+$/.test(fullName)) {
+                feedback.append('<p>Please enter a valid full name.</p>');
+                return;
+            }
+
+            if (!/^BCS-\d{2}-\d{4}-\d{4}$/.test(regNumber)) {
+                feedback.append('<p>Please enter a valid registration number (BCS-00-0000-0000).</p>');
+                return;
+            }
+
+            if (!/\S+@\S+\.\S+/.test(email)) {
+                feedback.append('<p>Please enter a valid email address.</p>');
+                return;
+            }
+
+            if (password.length < 8 || !/[!@#$%^&*]/.test(password)) {
+                feedback.append('<p>Password must be at least 8 characters long and include a special character.</p>');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                feedback.append('<p>Passwords do not match.</p>');
+                return;
+            }
+
+            if (!selectedRegion || !selectedDistrict) {
+                feedback.append('<p>Please select both a region and a district.</p>');
+                return;
+            }
+
+            feedback.css('color', 'green').text('Registration successful!');
+            // Add AJAX submission if needed
+        });
+    });
+</script>
+
+<footer>
+    <p>&copy; 2025 Organic Groceries. All rights reserved.</p>
+</footer>
+</body>
+</html>
